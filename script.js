@@ -12,11 +12,11 @@ card.forEach((element) => {
       let divImg = document.createElement("img")
       divImg.src = "./cards/8cxrbGE6i.jpg"
       newCard.appendChild(divImg)
-
+      newCard.classList.add("card")
       newCard.style.translate = "calc(var(--i)*20px)-300px"
       containerDiv.appendChild(newCard)
       newCard.onclick = function () {
-        newCard.classList.add("animate__backInLeft")
+        newCard.classList.add("card")
       }
     }
   })
