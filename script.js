@@ -84,13 +84,72 @@ card.forEach((element) => {
     let card2 = document.querySelector(".card2")
     let card3 = document.querySelector(".card3")
 
-    if (element.className === "card card1 animate__animated") {
-      name1.innerHTML = "Ali"
-      name2.innerHTML = "Abood"
-      name3.innerHTML = "Shaikha"
-      backSideDiv1.append(name1)
-      backSideDiv2.append(name2)
-      backSideDiv3.append(name3)
+    // if (element.className === "card card1 animate__animated") {
+    //   name1.innerHTML = "Ali"
+    //   name2.innerHTML = "Abood"
+    //   name3.innerHTML = "Shaikha"
+    //   backSideDiv1.append(name1)
+    //   backSideDiv2.append(name2)
+    //   backSideDiv3.append(name3)
+    // }
+
+    switch (element.className) {
+      case "card card1 animate__animated":
+        name1.innerHTML = "Salman"
+        name2.innerHTML = "Esra"
+        name3.innerHTML = "Sayed"
+        backSideDiv1.append(name1)
+        backSideDiv2.append(name2)
+        backSideDiv3.append(name3)
+        break
+      case "card card2 animate__animated":
+        name1.innerHTML = "Ali Elsayed"
+        name2.innerHTML = "Nayef"
+        name3.innerHTML = "Abdulamir"
+        backSideDiv1.append(name1)
+        backSideDiv2.append(name2)
+        backSideDiv3.append(name3)
+        break
+      case "card card3 animate__animated":
+        name1.innerHTML = "Shaikha J"
+        name2.innerHTML = "Yasmeen"
+        name3.innerHTML = "Hamad"
+        backSideDiv1.append(name1)
+        backSideDiv2.append(name2)
+        backSideDiv3.append(name3)
+        break
+      case "card card4 animate__animated":
+        name1.innerHTML = "Nabeel"
+        name2.innerHTML = "Mariam"
+        name3.innerHTML = "Abdulrahman"
+        backSideDiv1.append(name1)
+        backSideDiv2.append(name2)
+        backSideDiv3.append(name3)
+        break
+      case "card card5 animate__animated":
+        name1.innerHTML = "Fatima"
+        name2.innerHTML = "Shaikha E"
+        name3.innerHTML = "Jassim"
+        backSideDiv1.append(name1)
+        backSideDiv2.append(name2)
+        backSideDiv3.append(name3)
+        break
+      case "card card6 animate__animated":
+        name1.innerHTML = "Zainab"
+        name2.innerHTML = "Zahraa Ali"
+        name3.innerHTML = "Ahmed"
+        backSideDiv1.append(name1)
+        backSideDiv2.append(name2)
+        backSideDiv3.append(name3)
+        break
+      case "card card7 animate__animated":
+        name1.innerHTML = "Ali Albanna"
+        name2.innerHTML = "Zahraa Alhawaj"
+        name3.innerHTML = "Tasneem"
+        backSideDiv1.append(name1)
+        backSideDiv2.append(name2)
+        backSideDiv3.append(name3)
+        break
     }
 
     // console.log(element)
