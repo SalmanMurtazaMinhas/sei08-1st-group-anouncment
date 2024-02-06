@@ -69,7 +69,7 @@ body {
 
 .title {
   font-size: 1.5em;
-  font-weight: 900;
+  font-weight: 800;
   text-align: center;
   margin: 0;
 }
@@ -110,14 +110,16 @@ body {
 .frontSide,
 .frontSide::before {
   background-color: black;
-  background-image: url('./cards/8cxrbGE6i.jpg');
+  background-image: url('./cards/uno.png');
   background-position: center;
   background-size: cover;
 }
 
 .backSide,
 .backSide::before {
-  background-color: white;
+  background-image: url('./cards/e.png');
+  background-position: center;
+  background-size: cover;
   color: black;
 }
 
@@ -161,6 +163,7 @@ body {
     position: fixed;
     justify-content: center;
     align-items: center;
+    padding-bottom: 15%;
     
     /* background-color: aqua; */
 }
@@ -168,6 +171,7 @@ body {
 .myCard {
     opacity: 0;
 }
+
 
 canvas {
     position: absolute;
@@ -208,3 +212,6 @@ canvas {
 img {
     width: 90%;
 }
+h1{
+    transform: rotate(-60deg)
+  }
