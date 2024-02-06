@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: end;
     min-height: 100vh;
-    background: #35654d;
+    background: #353535;
     /* border: aqua 10px solid; */
     overflow: hidden;
 
@@ -177,7 +177,7 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #35654d;
+    background-color: #353535;
     z-index: -1;
   }
 
