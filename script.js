@@ -6,6 +6,11 @@ let img1 = document.querySelector('.img1')
 let img2 = document.querySelector('.img2')
 let img3 = document.querySelector('.img3')
 let img4 = document.querySelector('.img4')
+let song = document.querySelector('.song')
+let cardHover = document.querySelector('.cards-hover')
+let cardDeal = document.querySelector('.card-deal')
+let cardDeal2 = document.querySelector('.card-deal2')
+let cardDeal3 = document.querySelector('.card-deal3')
 let canvas = document.createElement('canvas')
 canvas.setAttribute('id','c')
 
@@ -359,7 +364,7 @@ setTimeout(()=>{
   , coss = 0
   , maxShardsParFirework = 0
   , tau = 0
-},12000)
+},13000)
 }
 
 
@@ -411,7 +416,7 @@ card.forEach((element) => {
       case "card card4 animate__animated":
         name1.innerHTML = "Nabeel"
         name2.innerHTML = "Mariam"
-        name3.innerHTML = "Abdulrahman"
+        name3.innerHTML = "Abood"
         backSideDiv1.append(name1)
         backSideDiv2.append(name2)
         backSideDiv3.append(name3)
@@ -446,15 +451,22 @@ card.forEach((element) => {
     // element.style.translate = "calc(var(--i)*20px)-300px"
     card1.style.opacity = "1"
     card1.classList.add("animate__slideInUp")
+    cardDeal.play()
 
     setTimeout(() => {
       card2.style.opacity = "1"
       card2.classList.add("animate__slideInUp")
+    //   cardDeal.pause()
+    //   cardDeal.currentTime = 0
+      cardDeal2.play()
     }, 200)
 
     setTimeout(() => {
       card3.style.opacity = "1"
       card3.classList.add("animate__slideInUp")
+    //   cardDeal.pause()
+    //   cardDeal.currentTime = 0
+      cardDeal3.play()
     }, 400)
 
     setTimeout(() => {
@@ -477,105 +489,33 @@ card.forEach((element) => {
   })
 })
 
+containerDiv.addEventListener("mouseenter", () => {
+    cardHover.play()
+});
+
 innerCardDiv1.addEventListener("click", () => {
   innerCardDiv1.style.transform = "rotateY(180deg)"
   fliped++
   console.log(fliped)
-  if (fliped === 3) {
-    setTimeout(() => {
-      cardDiv1.classList.remove("animate__slideInUp")
-      cardDiv1.classList.add("animate__hinge")
-    }, 8000)
-    setTimeout(() => {
-      cardDiv2.classList.remove("animate__slideInUp")
-      cardDiv2.classList.add("animate__hinge")
-    }, 8500)
-    setTimeout(() => {
-      cardDiv3.classList.remove("animate__slideInUp")
-      cardDiv3.classList.add("animate__hinge")
-    }, 9000)
-    // console.log(cardDiv1)
-    console.log("remove!")
-    fliped = 0
-    setTimeout(() => {
-      name1.innerHTML = ""
-      name2.innerHTML = ""
-      name3.innerHTML = ""
-      let myCard = document.querySelectorAll(".myCard")
-
-      myCard.forEach((element) => {
-        element.classList.remove("animate__hinge")
-        console.log(element)
-        element.style.opacity = "0"
-      })
-      innerCardDiv1.style.transform = "rotateY(0deg)"
-      innerCardDiv2.style.transform = "rotateY(0deg)"
-      innerCardDiv3.style.transform = "rotateY(0deg)"
-      body.removeChild(nameCon)
-    }, 12000)
-  }
-})
-innerCardDiv2.addEventListener("click", () => {
-  innerCardDiv2.style.transform = "rotateY(180deg)"
-  fliped++
-  console.log(fliped)
-  if (fliped === 3) {
-    setTimeout(() => {
-      cardDiv1.classList.remove("animate__slideInUp")
-      cardDiv1.classList.add("animate__hinge")
-    }, 8000)
-    setTimeout(() => {
-      cardDiv2.classList.remove("animate__slideInUp")
-      cardDiv2.classList.add("animate__hinge")
-    }, 8500)
-    setTimeout(() => {
-      cardDiv3.classList.remove("animate__slideInUp")
-      cardDiv3.classList.add("animate__hinge")
-    }, 9000)
-    // console.log(cardDiv1)
-    console.log("remove!")
-    fliped = 0
-    setTimeout(() => {
-      name1.innerHTML = ""
-      name2.innerHTML = ""
-      name3.innerHTML = ""
-      let myCard = document.querySelectorAll(".myCard")
-
-      myCard.forEach((element) => {
-        element.classList.remove("animate__hinge")
-        console.log(element)
-        element.style.opacity = "0"
-      })
-      innerCardDiv1.style.transform = "rotateY(0deg)"
-      innerCardDiv2.style.transform = "rotateY(0deg)"
-      innerCardDiv3.style.transform = "rotateY(0deg)"
-      body.removeChild(nameCon)
-    }, 12000)
-  }
-})
-
-innerCardDiv3.addEventListener("click", ()=> {
-    innerCardDiv3.style.transform = 'rotateY(180deg)'
-    fliped++
-    console.log(fliped)
-    if(fliped === 3 ){
+      if(fliped === 3 ){
         fireworks()
-        img1.src = './img/dance1.gif'
-        img2.src = "./img/dance7.gif"
-        img3.src = "./img/dance9.gif"
-        img4.src = "./img/dance2.gif"
+        song.src="./audio/September-Flute-Meme.mp3"
+        img1.src = './img/dance5.gif'
+        img2.src = "./img/dance3.gif"
+        img3.src = "./img/dance6.gif"
+        img4.src = "./img/dance8.gif"
         setTimeout(()=>{
             cardDiv1.classList.remove('animate__slideInUp')
             cardDiv1.classList.add('animate__hinge')
-        },8000)
+        },10000)
         setTimeout(()=>{
             cardDiv2.classList.remove('animate__slideInUp')
             cardDiv2.classList.add('animate__hinge')
-        },8500)
+        },10500)
         setTimeout(()=>{
             cardDiv3.classList.remove('animate__slideInUp')
             cardDiv3.classList.add('animate__hinge')
-        },9000)
+        },11000)
         // console.log(cardDiv1)
         console.log('remove!')
         fliped = 0
@@ -584,6 +524,7 @@ innerCardDiv3.addEventListener("click", ()=> {
             name1.innerHTML = ''
             name2.innerHTML = ''
             name3.innerHTML = ''
+            song.src = ''
             img1.src = ''
             img2.src = ''
             img3.src = ''
@@ -601,7 +542,112 @@ innerCardDiv3.addEventListener("click", ()=> {
             body.removeChild(nameCon)
 
 
+        },13000)
+    }
+})
+innerCardDiv2.addEventListener("click", () => {
+  innerCardDiv2.style.transform = "rotateY(180deg)"
+  fliped++
+  console.log(fliped)
+      if(fliped === 3 ){
+        fireworks()
+        song.src="./audio/I-got-beans.mp3"
+        img1.src = './img/dance7.gif'
+        img2.src = "./img/dance10.gif"
+        img3.src = "./img/dance9.gif"
+        img4.src = "./img/dance11.gif"
+        setTimeout(()=>{
+            cardDiv1.classList.remove('animate__slideInUp')
+            cardDiv1.classList.add('animate__hinge')
+        },10000)
+        setTimeout(()=>{
+            cardDiv2.classList.remove('animate__slideInUp')
+            cardDiv2.classList.add('animate__hinge')
+        },10500)
+        setTimeout(()=>{
+            cardDiv3.classList.remove('animate__slideInUp')
+            cardDiv3.classList.add('animate__hinge')
+        },11000)
+        // console.log(cardDiv1)
+        console.log('remove!')
+        fliped = 0
+        setTimeout(()=>{
+            body.removeChild(canvas)
+            name1.innerHTML = ''
+            name2.innerHTML = ''
+            name3.innerHTML = ''
+            song.src = ''
+            img1.src = ''
+            img2.src = ''
+            img3.src = ''
+            img4.src = ''
+            let myCard = document.querySelectorAll(".myCard")
+
+            myCard.forEach((element) => {
+                element.classList.remove('animate__hinge')
+                console.log(element)
+                element.style.opacity = '0'
+            })
+            innerCardDiv1.style.transform = 'rotateY(0deg)'
+            innerCardDiv2.style.transform = 'rotateY(0deg)'
+            innerCardDiv3.style.transform = 'rotateY(0deg)'
+            body.removeChild(nameCon)
+
+
+        },13000)
+    }
+})
+
+innerCardDiv3.addEventListener("click", ()=> {
+    innerCardDiv3.style.transform = 'rotateY(180deg)'
+    fliped++
+    console.log(fliped)
+    if(fliped === 3 ){
+        fireworks()
+        song.src="./audio/Last-Christmas-Arab.m4a"
+        img1.src = './img/dance1.gif'
+        img2.src = "./img/dance7.gif"
+        img3.src = "./img/dance9.gif"
+        img4.src = "./img/dance2.gif"
+        setTimeout(()=>{
+            cardDiv1.classList.remove('animate__slideInUp')
+            cardDiv1.classList.add('animate__hinge')
+        },10500)
+        setTimeout(()=>{
+            cardDiv2.classList.remove('animate__slideInUp')
+            cardDiv2.classList.add('animate__hinge')
+        },11000)
+        setTimeout(()=>{
+            cardDiv3.classList.remove('animate__slideInUp')
+            cardDiv3.classList.add('animate__hinge')
         },12000)
+        // console.log(cardDiv1)
+        console.log('remove!')
+        fliped = 0
+        setTimeout(()=>{
+            body.removeChild(canvas)
+            name1.innerHTML = ''
+            name2.innerHTML = ''
+            name3.innerHTML = ''
+            song.src = ''
+            img1.src = ''
+            img2.src = ''
+            img3.src = ''
+            img4.src = ''
+            let myCard = document.querySelectorAll(".myCard")
+
+            myCard.forEach((element) => {
+                element.classList.remove('animate__hinge')
+                console.log(element)
+                element.style.opacity = '0'
+            })
+            innerCardDiv1.style.transform = 'rotateY(0deg)'
+            innerCardDiv2.style.transform = 'rotateY(0deg)'
+            innerCardDiv3.style.transform = 'rotateY(0deg)'
+            body.removeChild(nameCon)
+
+
+        },15500)
     }
 })
 
