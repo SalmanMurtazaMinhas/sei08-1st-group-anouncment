@@ -378,7 +378,15 @@ card.forEach((element) => {
     let card1 = document.querySelector(".card1")
     let card2 = document.querySelector(".card2")
     let card3 = document.querySelector(".card3")
-
+    card1.addEventListener("click", () => {
+        cardDeal.play()
+    })
+    card2.addEventListener("click", () => {
+        cardDeal2.play()
+    })
+    card3.addEventListener("click", () => {
+        cardDeal3.play()
+    })
     // if (element.className === "card card1 animate__animated") {
     //   name1.innerHTML = "Ali"
     //   name2.innerHTML = "Abood"
